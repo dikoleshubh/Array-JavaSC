@@ -268,3 +268,15 @@ let employeePayrollData = new EmployeePayrollData(1,"Venu",60000);
 console.log("UC12\nClass contents:\n" + employeePayrollData.toString());
 employeePayrollData.name = "Champa";
 console.log(employeePayrollData.toString());
+
+
+let employeePayrollData = new EmployeePayrollData(1,"Venu",60000);
+console.log("UC12\nClass contents:\n" + employeePayrollData.toString());
+employeePayrollData.name = "Priyanshu";
+console.log(employeePayrollData.toString());
+
+
+//UC13 Exteded payroll datafield
+let newEmployeePayrollData = new EmployeePayrollData(2, "Terissa", 50000, 'F', new Date());
+console.log(newEmployeePayrollData.toString()); 
+© 2021 GitHub, Inc.
