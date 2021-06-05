@@ -241,3 +241,30 @@ console.log("Printing the part time working days:\n"+partTimeWorkingDaysArr);
 console.log("\nUC 11D:")
 let noWorkingDaysArr = empDayWageHourArr.filter(dayWageHour=>dayWageHour.dailyHr==0).map(dayWageHour=>dayWageHour.toString());
 console.log("Printing the no working days:\n"+noWorkingDaysArr);
+ 
+
+//Creating Employee Class
+
+class EmployeePayrollData
+{
+    
+    id; 
+    name;
+    salary;
+   
+    constructor(id, name, salary)
+    {
+        this.id = id;
+        this.name = name;
+        this.salary = salary;
+    }
+    // overriding toString() method
+    toString()
+    {
+        return "Id= " + this.id + ", Name= " + this.name + ", Salary= " + this.salary;
+    }
+}
+let employeePayrollData = new EmployeePayrollData(1,"Venu",60000);
+console.log("UC12\nClass contents:\n" + employeePayrollData.toString());
+employeePayrollData.name = "Champa";
+console.log(employeePayrollData.toString());
