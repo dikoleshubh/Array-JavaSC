@@ -215,3 +215,29 @@ console.log("UC 10\nShowing daily hours worked and wage alongwith day using obje
 empDayWageHourArr.forEach(x=>{
     console.log(x.dayNumber+" => "+x.dailyHr+" => "+x.dailyWage);
 });
+
+
+
+// UC11 Perform following Object operations using Arrow Functions:
+// 11.a Calc total Wage and total hours worked.
+console.log("UC11.a Calc total Wage and total hours worked:")
+totalWage = empDayWageHourArr.filter(dayWageHour=>dayWageHour.dailyWage>0).reduce((totalWage,dayWageHour)=>totalWage+=dayWageHour.dailyWage,0);
+totalHrs = empDayWageHourArr.filter(dayWageHour=>dayWageHour.dailyHr>0).reduce((totalHrs,dayWageHour)=>totalHrs+=dayWageHour.dailyHr,0);
+console.log("Total wage: "+totalWage+",Total work hours: "+totalHrs);
+
+
+// 11.b Show the full workings days using foreach
+console.log("UC11.b Show the full workings days using foreach:")
+console.log("Printing the full working days:")
+empDayWageHourArr.filter(dayWageHour=>dayWageHour.dailyHr==8).forEach(dayWageHour=>process.stdout.write(dayWageHour.toString()));
+
+// 11.c Show Part working days using map() by reducing to String Array
+console.log("\nUC11.c Show Part working days using map() by reducing to String Array:")
+let partTimeWorkingDaysArr = empDayWageHourArr.filter(dayWageHour=>dayWageHour.dailyHr==4).map(dayWageHour=>dayWageHour.toString());
+console.log("Printing the part time working days:\n"+partTimeWorkingDaysArr);
+
+
+// 11.d No working days only using map() function
+console.log("\nUC 11D:")
+let noWorkingDaysArr = empDayWageHourArr.filter(dayWageHour=>dayWageHour.dailyHr==0).map(dayWageHour=>dayWageHour.toString());
+console.log("Printing the no working days:\n"+noWorkingDaysArr);
